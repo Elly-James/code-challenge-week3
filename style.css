@@ -1,0 +1,445 @@
+
+
+/* GENERAL BODY*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', 'sans-serif';
+    text-decoration: none;
+    list-style: none;
+    
+}
+
+
+
+/* THE HEADER SECTION*/
+
+.header{
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: rgba(18, 95, 196, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    color: aliceblue;
+}
+
+
+.logo{
+    font-size: 25px;
+    color: black;
+    font-weight: 600;
+    transition: 0.3s ease;
+
+}
+
+
+.header_title{
+    text-align: center;
+    flex: 1;
+}
+.logo:hover{
+    color: orangered;
+    text-shadow: 0 0 25px orangered,
+                 0 0 25px orangered;
+    transform: scale(1.2) translateX(+10px);
+}
+
+
+
+
+/* THE MENU SECTION*/
+
+.menu {
+    display: flex;
+    flex-direction: column; /* Stacks title and form vertically */
+    justify-content: flex-start; /* Aligns items to the top */
+   
+    height: 100vh;
+    background: #f9f9f9; /* Optional */
+    padding: 20px;
+}
+
+/* Style .form_title */
+.menu_title {
+    width: 100%;
+    margin-bottom: 20px; /* Add space between the title and form */
+}
+
+/* Specific styling for the title text */
+.menu_title h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #123456; /* Replace with your preferred color */
+    margin: 0; /* Remove default margins if any */
+}
+
+
+
+.btn_menu{
+    flex: 0 0 48%; /* Ensures buttons take up equal width */
+    background: rgba(18, 95, 196, 0.8);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-bottom: 20px;
+}
+.btn_menu:hover{
+    transform: scale(1.2)translateX(+10px);
+    color: white;
+    border: 2px solid orangered;
+}
+
+/* Initialize counter for the container */
+#container_menu {
+    counter-reset: movieCounter; /* Start the numbering at 0 */
+}
+
+/* Apply numbering to each <p> tag */
+#container_menu p {
+    counter-increment: movieCounter; /* Increment the counter for each new <p> */
+    margin-bottom: 10px; /* Optional: spacing between movie names */
+}
+
+/* Add the numbering before the content */
+#container_menu p::before {
+    content: counter(movieCounter) ". "; /* Display the number before the title */
+    font-weight: bold; /* Optional: make the number bold */
+}
+
+
+/* Adjust delete button layout to ensure proper alignment */
+.container_display ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Ensures there is space between each movie */
+    padding: 0;
+}
+.movie_list{
+    font-size: 25px;
+}
+
+.movie_list:hover{
+    
+    color: orangered;
+
+}
+
+
+
+.delete {
+    flex: 0 0 120px; /* Ensures buttons take up a fixed width */
+    background: rgba(18, 95, 196, 0.8);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center; /* Centers text inside the button */
+    transition: background 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete:hover {
+    transform: scale(1.1);
+    color: white;
+    border: 2px solid orangered;
+}
+
+/* Add some spacing between movie name and the button */
+.movie_list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+
+
+
+
+/* THE DISPLAY AND THE FORM SECTION*/
+
+
+
+.display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 1200px; /* Increased max-width to accommodate both sections */
+    width: 100%;
+    margin: 0 auto;
+    gap: 20px;
+    align-items: center;
+}
+
+.container_display {
+    flex: 1;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.container_form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.display_title, .form_title {
+    width: 100%;
+    text-align: center;
+}
+
+.display_title h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form_title h2 {
+    color: #333;
+    margin-top: 30px;
+}
+
+.image-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    max-width: 400px;
+    max-height: 600px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+
+
+
+.movie-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 250px;
+    max-width: 100%;
+}
+
+
+
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+
+.ticket-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 250px;
+    max-width: 100%;
+}
+
+
+.movie-btn_previous {
+    background: rgba(255, 165, 0, 0.8); /* Orange */
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 250px;
+    max-width: 100%;
+    font-size: 17px;
+}
+
+.movie-btn_next {
+    background: rgba(255, 165, 0, 0.8); /* Orange */
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 250px;
+    max-width: 100%;
+    font-size: 17px;
+}
+
+.movie-btn_description {
+    background: rgba(5, 139, 5, 0.8);
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 250px;
+    max-width: 100%;
+    font-size: 17px;
+}
+
+.buy-ticket {
+    background: rgba(255, 0, 0, 0.8); /* Red */
+    color: white;
+    font-size: 17px;
+}
+
+.sold-out {
+    background: rgba(128, 128, 128, 0.8); /* Gray */
+    color: white;
+}
+
+
+
+
+
+/* Form styles*/
+
+#movie-form {
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#movie-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+#movie-form input, 
+#movie-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#add_movie {
+    width: 100%;
+    background: rgba(18, 95, 196, 0.8);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#add_movie:hover {
+    color: white;
+    transform: scale(1.0) translateX(+10px);
+    border: 2px solid orangered;
+}
+
+
+/* Responsive Design 
+@media (max-width: 900px) {
+    .display {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container_display,
+    .container_form {
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+*/
+
+
+/* THE FOOTER SECTION*/
+
+
+.footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 0;
+    background: rgba(18, 95, 196, 0.8);
+}
+.footer .social{
+    text-align: center;
+    padding-bottom: 25px;
+    color: white;
+}
+.social .fa-brands{
+    font-size: 24px;
+    color: white;
+    border: 2px solid orangered;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 8px;
+    box-shadow: inset 0 0 10px orangered,
+    orangered;
+    transition: 0.3s ease;
+}
+.social .fa-brands:hover{
+    transform: scale(1.2)translateY(-10px);
+    color: orangered;
+    border: 2px solid orangered;
+}
+
+.footer .copyright{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 12px;
+    color: white;
+}
+
