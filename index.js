@@ -40,8 +40,6 @@ function handleMenu(){
 
 
 // SECOND SECTION TO DISPLAY THE MOVIES ONE BY ONE TOGETHER WITH THE BUTTONS FOR NAVIGATION
-
-
 // Store movie data globally
 let movieData = [];
 let currentIndex = 0; // Track the current movie
@@ -76,26 +74,27 @@ function displayMovie(movie) {
   // Navigation and Action Buttons Container
   const navigationDiv = document.createElement('div');
   navigationDiv.className = 'navigation-buttons';
+// 1. Previous Button
+const prevBtn = document.createElement('button');
+prevBtn.textContent = 'Previous Movie';
+prevBtn.className = 'movie-btn_previous';
+prevBtn.onclick = (event) => {
+  event.preventDefault(); // Prevent the default behavior (e.g., page reload)
+  currentIndex = (currentIndex - 1 + movieData.length) % movieData.length;
+  displayMovie(movieData[currentIndex]);
+};
+navigationDiv.appendChild(prevBtn);
 
-  // 1. Previous Button
-  const prevBtn = document.createElement('button');
-  prevBtn.textContent = 'Previous Movie';
-  prevBtn.className = 'movie-btn_previous';
-  prevBtn.onclick = () => {
-    currentIndex = (currentIndex - 1 + movieData.length) % movieData.length;
-    displayMovie(movieData[currentIndex]);
-  };
-  navigationDiv.appendChild(prevBtn);
-
-  // 2. Next Button
-  const nextBtn = document.createElement('button');
-  nextBtn.textContent = 'Next Movie';
-  nextBtn.className = 'movie-btn_next';
-  nextBtn.onclick = () => {
-    currentIndex = (currentIndex + 1) % movieData.length;
-    displayMovie(movieData[currentIndex]);
-  };
-  navigationDiv.appendChild(nextBtn);
+// 2. Next Button
+const nextBtn = document.createElement('button');
+nextBtn.textContent = 'Next Movie';
+nextBtn.className = 'movie-btn_next';
+nextBtn.onclick = (event) => {
+  event.preventDefault(); // Prevent the default behavior (e.g., page reload)
+  currentIndex = (currentIndex + 1) % movieData.length;
+  displayMovie(movieData[currentIndex]);
+};
+navigationDiv.appendChild(nextBtn);
 
   buttonsDiv.appendChild(navigationDiv);
 
@@ -114,15 +113,21 @@ function displayMovie(movie) {
   actionDiv.appendChild(descriptionBtn);
 
   // 4. Buy Ticket Button
-  const availableTickets = movie.capacity - movie.tickets_sold;
+  let availableTickets = movie.capacity - movie.tickets_sold;
   const buyTicketBtn = document.createElement('button');
   buyTicketBtn.textContent = availableTickets <= 0 ? 'Sold Out' : `Buy Ticket (${availableTickets} available)`;
   buyTicketBtn.className = 'movie-btn ' + (availableTickets <= 0 ? 'sold-out' : 'buy-ticket');
   buyTicketBtn.disabled = availableTickets <= 0;
   buyTicketBtn.onclick = () => {
     if (availableTickets > 0) {
+      availableTickets -= 1;
+      movie.tickets_sold += 1; // Update the tickets_sold property locally
+      buyTicketBtn.textContent = availableTickets <= 0 ? 'Sold Out' : `Buy Ticket (${availableTickets} available)`;
+      buyTicketBtn.disabled = availableTickets <= 0;
       alert(`You bought a ticket for ${movie.title}!`);
-      // In a real application, you would update the server here
+    }
+    if (availableTickets <= 0) {
+      buyTicketBtn.classList.add('sold-out');
     }
   };
   actionDiv.appendChild(buyTicketBtn);
@@ -132,8 +137,6 @@ function displayMovie(movie) {
 
 // Initial fetch call when the page loads
 document.addEventListener('DOMContentLoaded', fetchMovies);
-
-
 
 
 

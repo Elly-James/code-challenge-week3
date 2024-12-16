@@ -33,7 +33,7 @@
 
 
 .logo{
-    font-size: 25px;
+    font-size: 40px;
     color: black;
     font-weight: 600;
     transition: 0.3s ease;
@@ -195,11 +195,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    background-color: white;
+    background-color: #49b8c7;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    max-width: 1200px; /* Increased max-width to accommodate both sections */
+   
     width: 100%;
     margin: 0 auto;
     gap: 20px;
