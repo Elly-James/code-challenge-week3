@@ -154,8 +154,8 @@
     {
       "id": "153a",
       "title": "Silo",
-      "runtime": "120",
-      "capacity": "40",
+      "runtime": "140",
+      "capacity": 56,
       "showtime": "11.00pm",
       "tickets_sold": "20",
       "description": "Silo is an American science fiction dystopian drama television series created by Graham Yost, based on the Silo trilogy of novels (Wool, Shift, and Dust) by author Hugh Howey.",

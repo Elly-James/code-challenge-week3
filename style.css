@@ -405,21 +405,7 @@
 }
 
 
-/* Responsive Design 
-@media (max-width: 900px) {
-    .display {
-        flex-direction: column;
-        align-items: center;
-    }
 
-    .container_display,
-    .container_form {
-        width: 100%;
-        max-width: 500px;
-    }
-}
-
-*/
 
 
 /* THE FOOTER SECTION*/
