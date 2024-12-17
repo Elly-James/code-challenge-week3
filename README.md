@@ -1,5 +1,7 @@
 #   Communicating with the Server Using JSON
 
+* Check out the live [link](https://elly-james.github.io/code-challenge-week3/)
+
 * The program illustrates communication with the server using JSON methods like POST, DELETE and PATCH.
 * This is done by fetching data from a db.json file after lauching JSON server in the local terminal.
 * It builds a website that enables the user to interact with the server and be able to manipulate the DOM 
