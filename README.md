@@ -8,7 +8,7 @@
 elements.
 * The user can view the data in the json file, delete data, add and update the data in the json file.
 * It has four file to enable the whole program to work effectively as follows:
-  
+     
 
      * **HTML** file to structure the DOM and give the website a skeleton to work with.
      * **CSS** fileto structure the elements that appear in the DOM via the HTML file
